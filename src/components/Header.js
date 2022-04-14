@@ -1,10 +1,22 @@
 import '../styles/Header.css';
 import SearchIcon from '@mui/icons-material/Search';
 import HeaderOption from './HeaderOption';
-import { Home } from '@mui/icons-material';
-import { SupervisorAccount } from '@mui/icons-material';
+import { Home, SupervisorAccount, BusinessCenter, Chat, NotificationAdd } from '@mui/icons-material';
+import { useDispatch } from 'react-redux';
+import { logout } from '../features/userSlice';
+import { signOut } from 'firebase/auth';
+import { auth } from '../firebase';
 
 function Header() {
+  const dispatch = useDispatch();
+
+  const logoutOfApp = async () => {
+
+    await signOut(auth)
+
+    dispatch(logout());
+  }
+
   return (
     <div className='header'>
         
@@ -22,6 +34,10 @@ function Header() {
         <div className="header__right">
             <HeaderOption Icon={Home} title='Home'/>
             <HeaderOption Icon={SupervisorAccount} title='My Network'/>
+            <HeaderOption Icon={BusinessCenter} title='Jobs'/>
+            <HeaderOption Icon={Chat} title='Messaging'/>
+            <HeaderOption Icon={NotificationAdd} title='Notifications'/>
+            <HeaderOption onClick={logoutOfApp} avatar='https://www.aiesec.in/wp-content/uploads/2018/08/Captain-america-1.jpg' title='Cap'/>
         </div>
 
     </div>
