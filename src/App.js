@@ -8,6 +8,7 @@ import Login from './components/Login';
 import { useEffect } from 'react';
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from './firebase';
+import Widgets from './components/Widgets';
 
 function App() {
 
@@ -47,6 +48,7 @@ function App() {
 					<Feed/>
 					
 					{/* Widgets */}
+					<Widgets/>
 				</div>
 			)}
 			

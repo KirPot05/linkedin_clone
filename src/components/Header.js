@@ -37,7 +37,7 @@ function Header() {
             <HeaderOption Icon={BusinessCenter} title='Jobs'/>
             <HeaderOption Icon={Chat} title='Messaging'/>
             <HeaderOption Icon={NotificationAdd} title='Notifications'/>
-            <HeaderOption onClick={logoutOfApp} avatar='https://www.aiesec.in/wp-content/uploads/2018/08/Captain-america-1.jpg' title='Cap'/>
+            <HeaderOption onClick={logoutOfApp} avatar={true} title='Log Out'/>
         </div>
 
     </div>
